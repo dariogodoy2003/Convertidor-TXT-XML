@@ -14,4 +14,4 @@ sha256:f2229277f031ef7cbe0799a50df35faec0cadf5c7903d601994b7c3f125913a9
 
 
 Manual de usuario: 
-https://dariogodoy2003.github.io/Conversor'TXT'XML/manual/Manual_de_uso_Conversor-TXT-XML.pdf
+https://dariogodoy2003.github.io/Conversor-TXT-XML/manual/Manual_de_uso_Conversor-TXT-XML.pdf
