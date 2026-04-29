@@ -45,7 +45,7 @@ La descarga del instalador se encuentra disponible desde la página oficial del 
 ## Manual de Usuario
 El manual completo en PDF se encuentra disponible en:
 
-###[Abrir Manual de Usuario]([docs](https://dariogodoy2003.github.io/Convertidor-TXT-XML/manual/Manual_de_uso_Conversor-TXT-XML.pdf)
+###[Abrir Manual de Usuario PDF](https://dariogodoy2003.github.io/Convertidor-TXT-XML/manual/Manual_de_uso_Conversor-TXT-XML.pdf)
 
 ---
 
@@ -79,7 +79,7 @@ No posee fines comerciales.
 ---
 
 ## Estado del proyecto
-**Version actual:***`v1.0`
+**Version actual:**`v1.0`
 
 Proyecto en desarrollo y mejora continua.
 
