@@ -295,47 +295,6 @@ Download the complete user manual in PDF format.
 
 </div>
 
-<script>
-
-    function verifyRegistration(){
-
-        const emailInput = document.getElementById("emailInput").value.trim();
-        const downloadBtn = document.getElementById("downloadBtn");
-        const statusMessage = document.getElementById("statusMessage");
-
-        if(emailInput === ""){
-
-            statusMessage.innerHTML = "Ingrese un correo electrónico válido / Enter a valid email address";
-            statusMessage.className = "status-message error";
-
-            return;
-        }
-
-
-        const registeredEmails = [
-            "usuario1@email.com",
-            "usuario2@email.com",
-            "usuario3@email.com"
-        ];
-
-        if(registeredEmails.includes(emailInput.toLowerCase())){
-
-            downloadBtn.classList.remove("btn-disabled");
-
-            statusMessage.innerHTML = "Registro verificado correctamente. Descarga habilitada. / Registration verified successfully. Download enabled.";
-            statusMessage.className = "status-message success";
-
-        }else{
-
-            downloadBtn.classList.add("btn-disabled");
-
-            statusMessage.innerHTML = "El correo ingresado no posee un registro válido. / The entered email does not have a valid registration.";
-            statusMessage.className = "status-message error";
-        }
-
-    }
-
-</script>
 
 </body>
 </html>
