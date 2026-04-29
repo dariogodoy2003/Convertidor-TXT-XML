@@ -106,11 +106,51 @@
             border-radius:12px;
             font-weight:600;
             transition:0.2s;
+            border:none;
+            cursor:pointer;
         }
 
         .btn:hover{
             background:#0056cc;
             transform:scale(1.03);
+        }
+
+        .btn-disabled{
+            background:#9ca3af !important;
+            pointer-events:none;
+            opacity:0.6;
+            cursor:not-allowed;
+        }
+
+        .verification-box{
+            margin-top:25px;
+            background:#eef4ff;
+            border:1px solid #d6e4ff;
+            border-radius:14px;
+            padding:20px;
+        }
+
+        .verification-box input{
+            width:100%;
+            padding:14px;
+            border:1px solid #cdd8ea;
+            border-radius:10px;
+            font-size:1rem;
+            margin-top:10px;
+            margin-bottom:15px;
+        }
+
+        .status-message{
+            margin-top:15px;
+            font-weight:600;
+        }
+
+        .success{
+            color:#15803d;
+        }
+
+        .error{
+            color:#b91c1c;
         }
 
         .footer{
@@ -209,12 +249,12 @@ Registered with the Dirección Nacional de Derechos de Autor (Ley 11723), Repúb
 
         <div class="card">
 
-            <h2>Registro / Registration</h2>
+            <h2>Registro obligatorio / Mandatory registration</h2>
 
             <p>
-Antes de descargar el software, se solicita completar el siguiente formulario de registro.
+Para acceder a la descarga del software es necesario completar previamente el formulario de registro.
 
-Before downloading the software, please complete the following registration form.
+Once the registration form has been completed, access to the download page will be enabled.
             </p>
 
             <div class="button-group">
@@ -222,26 +262,6 @@ Before downloading the software, please complete the following registration form
                    href="https://forms.gle/nNRa9xnjXimxUWfj8"
                    target="_blank">
                    Completar registro / Complete registration
-                </a>
-            </div>
-
-        </div>
-
-        <div class="card">
-
-            <h2>Descarga / Download</h2>
-
-            <p>
-Luego del registro podrá descargar el instalador.
-
-After registration, you will be able to download the installer.
-            </p>
-
-            <div class="button-group">
-                <a class="btn"
-                   href="https://github.com/dariogodoy2003/Convertidor-TXT-XML/releases/download/v1.0/Instalador_Convertidor.TXT-XML.Setup.1.0.0.zip"
-                   target="_blank">
-                   Descargar instalador / Download installer
                 </a>
             </div>
 
@@ -259,7 +279,7 @@ Download the complete user manual in PDF format.
 
             <div class="button-group">
                 <a class="btn"
-                   href="./manual/Manual_de_uso_Convertidor-TXT-XML.pdf"
+                   href="./manual/Manual_de_uso_Conversor-TXT-XML.pdf"
                    target="_blank">
                    Abrir manual PDF / Open PDF manual
                 </a>
@@ -270,10 +290,56 @@ Download the complete user manual in PDF format.
     </div>
 
     <div class="footer">
-        Convertidor TXT-XML • Open Source • 2026
+        Convertidor TXT-XML • Open Source • 2025
     </div>
 
 </div>
+
+<script>
+
+    function verifyRegistration(){
+
+        const emailInput = document.getElementById("emailInput").value.trim();
+        const downloadBtn = document.getElementById("downloadBtn");
+        const statusMessage = document.getElementById("statusMessage");
+
+        if(emailInput === ""){
+
+            statusMessage.innerHTML = "Ingrese un correo electrónico válido / Enter a valid email address";
+            statusMessage.className = "status-message error";
+
+            return;
+        }
+
+        /*
+        IMPORTANTE:
+        Reemplace los correos permitidos por los reales obtenidos desde Google Forms.
+        */
+
+        const registeredEmails = [
+            "usuario1@email.com",
+            "usuario2@email.com",
+            "usuario3@email.com"
+        ];
+
+        if(registeredEmails.includes(emailInput.toLowerCase())){
+
+            downloadBtn.classList.remove("btn-disabled");
+
+            statusMessage.innerHTML = "Registro verificado correctamente. Descarga habilitada. / Registration verified successfully. Download enabled.";
+            statusMessage.className = "status-message success";
+
+        }else{
+
+            downloadBtn.classList.add("btn-disabled");
+
+            statusMessage.innerHTML = "El correo ingresado no posee un registro válido. / The entered email does not have a valid registration.";
+            statusMessage.className = "status-message error";
+        }
+
+    }
+
+</script>
 
 </body>
 </html>
