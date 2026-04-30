@@ -1,10 +1,10 @@
 # Convertidor-TXT-XML
-Software libre para conversión de listas de picos MALDI-TOF del tipo generado por Vitek MS / Saramis RUO a XML compatible con la base de datos pública MicrobeNet.
+Software libre para conversión de listas de picos MALDI-TOF MS del tipo generado por Vitek MS / Saramis RUO a XML compatible con la base de datos pública MicrobeNet.
 
 ---
 
 ## Descripción
-**Convertidor TXT-XML** es una aplicación liviana y de ejecución local diseñada para transformar archivos `.txt` con listas de picos MALDI-TOF generadas por sistemas como Vitek MS / Saramis RUO a formato XML compatible con la base de datos pública **MicrobeNet (CDC).**
+**Convertidor TXT-XML** es una aplicación liviana y de ejecución local diseñada para transformar archivos `.txt` con listas de picos MALDI-TOF MS generadas por sistemas como Vitek MS / Saramis RUO a formato XML compatible con la base de datos pública **MicrobeNet (CDC).**
 
 El software fue desarrollado con foco en:
 - simplicidad de uso,
@@ -68,7 +68,7 @@ f2229277f031ef7cbe0799a50df35faec0cadf5c7903d601994b7c3f125913a9
 ## Registro
 El formulario de registro solicitado previo a la descarga tiene fines exclusivamente estadísticos y académicos, permitiendo conocer distribución geográfica y cantidad aproximada de usuarios.
 
-No posee fines comerciales.
+Sin fines comerciales.
 
 ---
 
