@@ -128,6 +128,7 @@ body{
     border:none;
     cursor:pointer;
     transition:all 0.25s ease;
+    cursor:pointer;
 }
 
 .btn:hover{
@@ -145,6 +146,7 @@ body{
 .btn.secondary:hover{
     background:var(--primary);
     color:white;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
 .content{
@@ -246,6 +248,8 @@ h2{
     max-width:650px;
     border-radius:12px;
     margin-top:15px;
+    border:1px solid var(--border);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .footer{
@@ -257,6 +261,11 @@ h2{
     .hero h1{font-size:2rem;}
     .content{padding:20px;}
     .screenshot img{width:100%;}
+    .card{padding:20px;}
+}
+
+*{
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
 
 </style>
@@ -268,12 +277,24 @@ h2{
 
         <div class="hero">
             <h1>Convertidor TXT-XML</h1>
-            <p>Convierte listas de picos MALDI-TOF en XML compatible con MicrobeNet en segundos: sin instalación compleja, sin conexión y con control total de los datos.</p>
+            <p>Convierte listas de picos MALDI-TOF en XML compatible con MicrobeNet en segundos</p>
+            <p>Sin instalación compleja. Sin conexión. Control total de sus datos.</p>
+            <p style="margin-top:10px; opacity:0.9;">Acceso inmediato tras registro (menos de 10 segundos).</p>
             <div class="hero-buttons">
                 <a class="btn" href="https://forms.gle/nNRa9xnjXimxUWfj8" target="_blank">Descargar instalador</a>
                 <a class="btn secondary" href="https://github.com/dariogodoy2003/Convertidor-TXT-XML" target="_blank">GitHub</a>
                 <button class="btn secondary" onclick="toggleTheme()" id="themeToggle">🌙 Modo oscuro</button>
             </div>
+        </div>
+
+        <div class="card">
+                <h2>Validación y confiabilidad</h2>
+                <ul class="check-list">
+                    <li>Software registrado (Argentina)</li>
+                    <li>Procesamiento local (sin envío de datos)</li>
+                    <li>Compatible con MicrobeNet</li>
+                    <li>Distribuído bajo licencia MIT</li>
+                </ul>
         </div>
 
         <div class="content">
@@ -286,21 +307,21 @@ h2{
                 <div class="feature">
                     <div class="feature-icon">📄
                     </div>
-                    <strong>Cargar archivo</strong>
+                    <strong>1. Cargar archivo</strong>
                     <p>Seleccione o arrastre el archivo .txt</p>
                 </div>
 
                 <div class="feature">
                     <div class="feature-icon">⚙️
                     </div>
-                    <strong>Procesar</strong>
+                    <strong>2. Procesar</strong>
                     <p>Conversión automática e inmediata</p>
                 </div>
 
                 <div class="feature">
                     <div class="feature-icon">📦
                     </div>
-                    <strong>Exportar</strong>
+                    <strong>3. Exportar XML</strong>
                     <p>Obtenga el XML listo para MicrobeNet</p>
                 </div>
             </div>
@@ -314,17 +335,17 @@ h2{
                 
                     <div class="feature">
                     <strong>Conversión directa</strong>
-                    TXT → XML compatible con MicrobeNet
+                    TXT → XML MicrobeNet
                     </div>
                 
                     <div class="feature">
                     <strong>Drag & Drop</strong>
-                    Procesamiento simple e intuitivo
+                    Uso inmediato
                     </div>
                 
                     <div class="feature">
                     <strong>Ejecución local</strong>
-                    Sin servidores ni dependencias externas
+                    Sin servidores
                     </div>
                 
                     <div class="feature">
@@ -362,15 +383,6 @@ h2{
 
             </div>
 
-            <div class="card">
-                <h2>Validación y confiabilidad</h2>
-                <ul class="check-list">
-                    <li>Software registrado (Argentina)</li>
-                    <li>Procesamiento local (sin envío de datos)</li>
-                    <li>Compatible con MicrobeNet</li>
-                    <li>Distribuído bajo licencia MIT</li>
-                </ul>
-            </div>
 
             <div class="card screenshot">
                 <h2>Interfaz del sistema</h2>
@@ -380,7 +392,7 @@ h2{
         </div>
 
         <div class="card">
-                <h2>Acceso a descarga</h2>
+                <h2>Descargar (requiere registro)</h2>
                 
                     <div class="lang-block">
                     Para acceder al instalador es necesario completar un breve formulario de registro con fines estadísticos.
@@ -412,6 +424,16 @@ h2{
                 Abrir manual PDF
                 </a>
             </div>
+        </div>
+
+        <div class="card">
+                <h2>Usuarios finales</h2>
+                <ul class="check-list">
+                    <li>Laboratorios clínicos</li>
+                    <li>Microbiólogos</li>
+                    <li>Investigadores</li>
+                    <li>Entornos académicos</li>
+                </ul>
         </div>
 
         <div class="footer">
