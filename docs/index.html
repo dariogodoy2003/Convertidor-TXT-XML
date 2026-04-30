@@ -26,7 +26,8 @@ body{
 
 .container{
     max-width:1100px;
-    margin:auto;
+    margin:0 auto;
+    text-align:center;
     background:white;
     border-radius:20px;
     overflow:hidden;
@@ -70,6 +71,7 @@ body{
     padding:30px;
     margin-bottom:30px;
     transition:0.25s;
+    text-align:center;
 }
 
 .card:hover{
@@ -98,8 +100,9 @@ h2{
 
 .features{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+    justify-items:center;
 }
 
 .feature{
@@ -112,6 +115,9 @@ h2{
     display:flex;
     flex-direction:column;
     justify-content:center;
+    max-width:260px;
+    width:100%;
+    align-items:center;
 }
 
 .feature:hover{
@@ -128,7 +134,10 @@ h2{
 }
 
 .feature{
-    min-height:130px;
+    min-height:auto;
+    heigth:auto;
+    padding:16px 18px;
+    color:#222;
 }
 
 .screenshot{
@@ -304,9 +313,8 @@ h2{
    </div>
     
     <div class="card screenshot">
-        <h2>Vista del sistema</h2>
         <h2>Interfaz del sistema</h2>
-        <p>Procesamiento simple mediante arrastrar y soltar archivos.</p>
+        <p>Procesamiento simple: "arrastrar y soltar" archivos.</p>
         <img src="./screenshots/main.png">
     </div>
     
