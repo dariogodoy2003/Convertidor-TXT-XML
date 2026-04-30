@@ -2,210 +2,149 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Convertidor TXT-XML</title>
+<title>Convertidor TXT-XML</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        body{
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg,#f4f7fb,#dfe9f3);
-            color:#222;
-            line-height:1.7;
-            padding:20px;
-        }
+body{
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:linear-gradient(135deg,#f4f7fb,#dfe9f3);
+    color:#222;
+    line-height:1.7;
+    padding:20px;
+}
 
-        .container{
-            max-width:1000px;
-            margin:auto;
-            background:white;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 10px 30px rgba(0,0,0,0.12);
-        }
+.container{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
 
-        .hero{
-            background: linear-gradient(135deg,#0078ff,#005fcc);
-            color:white;
-            padding:60px 40px;
-            text-align:center;
-        }
+.hero{
+    background:linear-gradient(135deg,#0078ff,#005fcc);
+    color:white;
+    padding:70px 40px;
+    text-align:center;
+}
 
-        .hero h1{
-            font-size:3rem;
-            margin-bottom:15px;
-            font-weight:700;
-        }
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
 
-        .hero p{
-            max-width:750px;
-            margin:auto;
-            opacity:0.95;
-            font-size:1.05rem;
-        }
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:1.15rem;
+}
 
-        .content{
-            padding:40px;
-        }
+.hero-buttons{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        .card{
-            background:#f9fbff;
-            border:1px solid #e3eaf5;
-            border-radius:18px;
-            padding:30px;
-            margin-bottom:30px;
-            transition:0.25s;
-        }
+.content{
+    padding:40px;
+}
 
-        .card:hover{
-            transform:translateY(-3px);
-            box-shadow:0 8px 20px rgba(0,0,0,0.08);
-        }
+.card{
+    background:#f9fbff;
+    border:1px solid #e3eaf5;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:30px;
+    transition:0.25s;
+}
 
-        h2{
-            margin-bottom:18px;
-            color:#005fcc;
-            font-size:1.5rem;
-        }
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
 
-        p{
-            white-space: pre-line;
-            margin-bottom:20px;
-        }
+h2{
+    margin-bottom:18px;
+    color:#005fcc;
+}
 
-        .hash{
-            background:#eef4ff;
-            padding:15px;
-            border-radius:10px;
-            font-family:Consolas, monospace;
-            font-size:0.9rem;
-            word-break:break-all;
-            border-left:5px solid #0078ff;
-        }
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-        .button-group{
-            display:flex;
-            flex-wrap:wrap;
-            gap:15px;
-            margin-top:20px;
-        }
+.feature{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #e3eaf5;
+}
 
-        .btn{
-            display:inline-block;
-            padding:15px 25px;
-            background:#0078ff;
-            color:white;
-            text-decoration:none;
-            border-radius:12px;
-            font-weight:600;
-            transition:0.2s;
-            border:none;
-            cursor:pointer;
-        }
+.feature strong{
+    display:block;
+    margin-bottom:5px;
+}
 
-        .btn:hover{
-            background:#0056cc;
-            transform:scale(1.03);
-        }
+.screenshot{
+    text-align:center;
+}
 
-        .btn-disabled{
-            background:#9ca3af !important;
-            pointer-events:none;
-            opacity:0.6;
-            cursor:not-allowed;
-        }
+.screenshot img{
+    width:100%;
+    border-radius:12px;
+    border:1px solid #ddd;
+}
 
-        .verification-box{
-            margin-top:25px;
-            background:#eef4ff;
-            border:1px solid #d6e4ff;
-            border-radius:14px;
-            padding:20px;
-        }
+.btn{
+    display:inline-block;
+    padding:14px 22px;
+    background:#0078ff;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+}
 
-        .verification-box input{
-            width:100%;
-            padding:14px;
-            border:1px solid #cdd8ea;
-            border-radius:10px;
-            font-size:1rem;
-            margin-top:10px;
-            margin-bottom:15px;
-        }
+.btn.secondary{
+    background:#444;
+}
 
-        .status-message{
-            margin-top:15px;
-            font-weight:600;
-        }
+.btn:hover{
+    opacity:0.9;
+}
 
-        .success{
-            color:#15803d;
-        }
+.hash{
+    background:#eef4ff;
+    padding:12px;
+    border-radius:10px;
+    font-family:Consolas;
+    font-size:0.9rem;
+    border-left:4px solid #0078ff;
+}
 
-        .error{
-            color:#b91c1c;
-        }
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#666;
+    font-size:0.9rem;
+    border-top:1px solid #eee;
+}
 
-        .footer{
-            text-align:center;
-            padding:25px;
-            color:#666;
-            font-size:0.9rem;
-            border-top:1px solid #eee;
-            background:#fafafa;
-        }
+@media(max-width:768px){
+    .hero h1{font-size:2rem;}
+    .content{padding:20px;}
+}
+</style>
 
-        @media (max-width:768px){
-
-            .hero{
-                padding:45px 25px;
-            }
-
-            .hero h1{
-                font-size:2.1rem;
-            }
-
-            .hero p{
-                font-size:1rem;
-            }
-
-            .content{
-                padding:20px;
-            }
-
-            .card{
-                padding:22px;
-            }
-
-            .btn{
-                width:100%;
-                text-align:center;
-            }
-        }
-
-        @media (max-width:480px){
-
-            .hero h1{
-                font-size:1.8rem;
-            }
-
-            h2{
-                font-size:1.3rem;
-            }
-
-            body{
-                padding:10px;
-            }
-        }
-
-    </style>
 </head>
 
 <body>
@@ -215,12 +154,64 @@
     <div class="hero">
         <h1>Convertidor TXT-XML</h1>
 
-        <p>
-Conversión simple, rápida y local de listas de picos MALDI-TOF (tipo Vitek MS / Saramis RUO) a XML compatible con MicrobeNet.
-        </p>
+    <p>
+Convierte listas de picos MALDI-TOF (Vitek MS / Saramis RUO) a XML compatible con MicrobeNet de forma simple, rápida y local.
+    </p>
+
+    <div class="hero-buttons">
+        <a class="btn" href="https://forms.gle/nNRa9xnjXimxUWfj8" target="_blank">
+            Acceder a descarga
+        </a>
+
+        <a class="btn secondary" href="https://github.com/dariogodoy2003/Convertidor-TXT-XML" target="_blank">
+            Ver en GitHub
+        </a>
     </div>
+</div>
 
     <div class="content">
+
+        <div class="card">
+    <h2>Características principales</h2>
+
+    <div class="features">
+        <div class="feature">
+            <strong>Conversión directa</strong>
+            TXT → XML compatible con MicrobeNet
+        </div>
+
+        <div class="feature">
+            <strong>Drag & Drop</strong>
+            Procesamiento simple e intuitivo
+        </div>
+
+        <div class="feature">
+            <strong>Ejecución local</strong>
+            Sin servidores ni dependencias externas
+        </div>
+
+        <div class="feature">
+            <strong>Ligero</strong>
+            Rápido y sin instalación compleja
+        </div>
+
+        <div class="feature">
+            <strong>Offline</strong>
+            No requiere conexión a internet
+        </div>
+
+        <div class="feature">
+            <strong>Open Source</strong>
+            Distribución libre y gratuita
+        </div>
+    </div>
+</div>
+
+<div class="card screenshot">
+    <h2>Vista del sistema</h2>
+
+    <img src="./screenshots/main.png" alt="Pantalla principal">
+</div>
 
         <div class="card">
 
@@ -233,7 +224,7 @@ Diseñada bajo criterios de eficiencia y facilidad de uso, la herramienta permit
 
 Registrado ante la Dirección Nacional de Derechos de Autor (DNDA), conforme a la Ley 11.723 de Propiedad Intelectual, República Argentina (2025).
 
----
+
 
 Open-source application for converting MALDI-TOF peak lists obtained from commercial mass spectrometry systems (such as Vitek MS / Saramis RUO), from .txt files into XML format compatible with the public MicrobeNet database (CDC).
 
@@ -252,28 +243,17 @@ Registered with the Dirección Nacional de Derechos de Autor (DNDA), in accordan
 
         <div class="card">
 
-            <h2>Registro / Registration</h2>
+            <h2>Acceso a descarga</h2>
 
             <p>
-Para acceder a la descarga del software es necesario completar previamente el formulario de registro.
+Para acceder al instalador es necesario completar un breve formulario de registro con fines estadísticos.
 
-Este registro tiene fines exclusivamente estadísticos y académicos.
-
-
-Once the registration form has been completed, access to the download page will be enabled.
-
-This registration is used exclusively for statistical and academic purposes.
+To access the installer, completion of a brief registration form for statistical purposes is required.
 
             </p>
-
-            <div class="button-group">
-                <a class="btn"
-                   href="https://forms.gle/nNRa9xnjXimxUWfj8"
-                   target="_blank">
-                   Completar registro / Complete registration
-                </a>
-            </div>
-
+            <a class="btn" href="https://forms.gle/nNRa9xnjXimxUWfj8" target="_blank">
+Completar registro
+            </a>
         </div>
 
         <div class="card">
