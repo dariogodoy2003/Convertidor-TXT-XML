@@ -136,7 +136,7 @@ h2{
 
 .feature{
     min-height:auto;
-    heigth:auto;
+    height:auto;
     padding:16px 18px;
     color:#222;
 }
@@ -221,6 +221,90 @@ h2{
         text-align:center;
     }
 }
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    justify-items:center;
+}
+
+.feature{
+    background:white;
+    padding:22px 20px;
+    border-radius:16px;
+    border:1px solid #e6ecf5;
+    text-align:center;
+    max-width:260px;
+    width:100%;
+    transition:all 0.25s ease;
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.feature.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.feature:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.08);
+}
+
+.feature-icon{
+    width:48px;
+    height:48px;
+    margin:0 auto 12px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0078ff,#005fcc);
+    color:white;
+    font-size:22px;
+}
+
+.feature strong{
+    display:block;
+    margin-bottom:6px;
+    color:#005fcc;
+    font-size:1.05rem;
+}
+
+.feature p{
+    font-size:0.95rem;
+    color:#444;
+}
+
+.check-list{
+    list-style:none;
+    padding-left:0;
+    margin-top:10px;
+}
+
+.check-list li{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+
+.check-list li::before{
+    content:"✔";
+    position:center;
+    left:0;
+    color:#16a34a; 
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+    .feature{
+        max-width:100%;
+    }
+}
+
 </style>
 
 </head>
@@ -239,18 +323,18 @@ h2{
             <div class="features">
 
                <div class="feature">
-               <strong>1. Cargar archivo</strong>
-               Arrastre el archivo .txt al sistema
+               <strong>Cargar archivo</strong>
+               <p>Seleccione o arrastre el archivo .txt </p>
                </div>
       
                <div class="feature">
-               <strong>2. Procesar</strong>
-               Conversión automática e inmediata
+               <strong>Procesar</strong>
+               <p>Conversión automática e inmediata</p>
                </div>
       
                <div class="feature">
-               <strong>3. Exportar</strong>
-               Obtenga el XML listo para MicrobeNet
+               <strong>Exportar</strong>
+               <p>Obtenga el XML listo para MicrobeNet</p>
                </div>
 
             </div>
@@ -305,11 +389,11 @@ h2{
     
    <div class="card">
       <h2>Validación y confiabilidad</h2>  
-      <ul>
-      <li>✔ Software registrado ante DNDA (Argentina)</li>
-      <li>✔ Procesamiento local (sin envío de datos)</li>
-      <li>✔ Compatible con MicrobeNet (CDC)</li>
-      </li>
+      <ul class="check-list">
+      <li>Software registrado (Argentina)</li>
+      <li>Procesamiento local (sin envío de datos)</li>
+      <li>Compatible con MicrobeNet (CDC)</li>
+      <li>Distribuído bajo licencia MIT</li>
       </ul>
    </div>
     
@@ -399,6 +483,24 @@ h2{
 
 <script data-goatcounter="https://converter-txt-xml.goatcounter.com/count"
 async src="//gc.zgo.at/count.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const features = document.querySelectorAll(".feature");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    features.forEach(f => observer.observe(f));
+
+});
+</script>
 
 </body>
 </html>
