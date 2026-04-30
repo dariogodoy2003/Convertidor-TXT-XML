@@ -18,8 +18,8 @@
 
 body{
     font-family:"Segoe UI", Arial, sans-serif;
-    background:linear-gradient(135deg,#f4f7fb,#dfe9f3);
-    color:#222;
+    background:var(--bg-main);
+    color:var(--text-main);
     line-height:1.7;
     padding:20px;
 }
@@ -35,7 +35,7 @@ body{
 }
 
 .hero{
-    background:linear-gradient(135deg,#0078ff,#005fcc);
+    background:linear-gradient(135deg,var(--primary),var(--accent));
     color:white;
     padding:70px 40px;
     text-align:center;
@@ -65,8 +65,8 @@ body{
 }
 
 .card{
-    background:#f9fbff;
-    border:1px solid #e3eaf5;
+    background:var(--bg-card);
+    border:1px solid var(--border);
     border-radius:18px;
     padding:30px;
     margin-bottom:30px;
@@ -109,7 +109,7 @@ h2{
     background:white;
     padding:22px;
     border-radius:14px;
-    border:1px solid #e3eaf5;
+    border:1px solid var(--border);
     transition:0.2s;
     text-align:center;
     display:flex;
@@ -157,7 +157,7 @@ h2{
 .btn{
     display:inline-block;
     padding:14px 22px;
-    background:#0078ff;
+    background:var(--primary);
     color:white;
     text-decoration:none;
     border-radius:10px;
@@ -169,6 +169,7 @@ h2{
 }
 
 .btn:hover{
+    background:var(--primary-dark);
     opacity:0.9;
 }
 
@@ -295,7 +296,7 @@ h2{
     content:"✔";
     position:center;
     left:0;
-    color:#16a34a; 
+    color:var(--success); 
     font-weight:bold;
 }
 
@@ -303,6 +304,18 @@ h2{
     .feature{
         max-width:100%;
     }
+}
+
+:root{
+    --bg-main:#f6f8fc;
+    --bg-card:#ffffff;
+    --primary:#2563eb;
+    --primary-dark:#1e40af;
+    --accent:#0ea5e9;
+    --text-main:#1f2937;
+    --text-secondary:#4b5563;
+    --border:#e5e7eb;
+    --success:#16a34a;
 }
 
 </style>
