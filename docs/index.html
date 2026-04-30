@@ -8,7 +8,9 @@
 <title>Convertidor TXT-XML</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+    *{margin:0;
+      padding:0;
+      box-sizing:border-box;}
 
 body{
     font-family:"Segoe UI", Arial, sans-serif;
@@ -46,7 +48,7 @@ body{
 }
 
 .hero-buttons{
-    margin-top:25px;
+    margin-top:30px;
     display:flex;
     justify-content:center;
     gap:15px;
@@ -76,23 +78,41 @@ h2{
     color:#005fcc;
 }
 
+.lang-block{
+    margin-bottom:18px;
+}
+
+.btn-group{
+    margin-top:20px;
+}
+
 .features{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:20px;
 }
 
 .feature{
     background:white;
-    padding:20px;
-    border-radius:12px;
+    padding:22px;
+    border-radius:14px;
     border:1px solid #e3eaf5;
+    transition:0.2s;
+    text-align:left;
+}
+
+.feature:hover{
+    transform:translateY(-4px);
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
 
 .feature strong{
     display:block;
-    margin-bottom:5px;
+    margin-bottom:8px;
+    color:#005fcc;
+    font-size:1.05rem;
 }
+
 
 .screenshot{
     text-align:center;
@@ -100,9 +120,11 @@ h2{
 
 .screenshot img{
     width:100%;
+    max-width:900px;
     border-radius:12px;
     border:1px solid #ddd;
 }
+
 
 .btn{
     display:inline-block;
@@ -122,6 +144,7 @@ h2{
     opacity:0.9;
 }
 
+
 .hash{
     background:#eef4ff;
     padding:12px;
@@ -131,6 +154,7 @@ h2{
     border-left:4px solid #0078ff;
 }
 
+
 .footer{
     text-align:center;
     padding:20px;
@@ -139,9 +163,33 @@ h2{
     border-top:1px solid #eee;
 }
 
+
 @media(max-width:768px){
-    .hero h1{font-size:2rem;}
-    .content{padding:20px;}
+
+    .hero{
+        padding:50px 20px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .feature{
+        padding:18px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
 }
 </style>
 
@@ -150,141 +198,136 @@ h2{
 <body>
 
 <div class="container">
-
-    <div class="hero">
-        <h1>Convertidor TXT-XML</h1>
-
-    <p>
-Convierte listas de picos MALDI-TOF (Vitek MS / Saramis RUO) a XML compatible con MicrobeNet de forma simple, rápida y local.
-    </p>
-
-    <div class="hero-buttons">
-        <a class="btn" href="https://forms.gle/nNRa9xnjXimxUWfj8" target="_blank">
-            Acceder a descarga
-        </a>
-
-        <a class="btn secondary" href="https://github.com/dariogodoy2003/Convertidor-TXT-XML" target="_blank">
-            Ver en GitHub
-        </a>
-    </div>
-</div>
-
-    <div class="content">
-
-        <div class="card">
-    <h2>Características principales</h2>
-
-    <div class="features">
-        <div class="feature">
-            <strong>Conversión directa</strong>
-            TXT → XML compatible con MicrobeNet
-        </div>
-
-        <div class="feature">
-            <strong>Drag & Drop</strong>
-            Procesamiento simple e intuitivo
-        </div>
-
-        <div class="feature">
-            <strong>Ejecución local</strong>
-            Sin servidores ni dependencias externas
-        </div>
-
-        <div class="feature">
-            <strong>Ligero</strong>
-            Rápido y sin instalación compleja
-        </div>
-
-        <div class="feature">
-            <strong>Offline</strong>
-            No requiere conexión a internet
-        </div>
-
-        <div class="feature">
-            <strong>Open Source</strong>
-            Distribución libre y gratuita
-        </div>
-    </div>
-</div>
-
-<div class="card screenshot">
-    <h2>Vista del sistema</h2>
-
-    <img src="./screenshots/main.png" alt="Pantalla principal">
-</div>
-
-        <div class="card">
-
-            <h2>Descripción / Description</h2>
-
+        <div class="hero">
+            <h1>Convertidor TXT-XML</h1>
             <p>
-Aplicación de código abierto para la conversión de listas de picos MALDI-TOF provenientes de sistemas comerciales de espectrometría de masas (como Vitek MS / Saramis RUO), a partir de archivos .txt, hacia formato XML compatible con la base de datos pública MicrobeNet (CDC).
-
-Diseñada bajo criterios de eficiencia y facilidad de uso, la herramienta permite el procesamiento de archivos mediante drag and drop y se ejecuta íntegramente en entorno local, garantizando independencia de servicios externos y resguardo de la información.
-
-Registrado ante la Dirección Nacional de Derechos de Autor (DNDA), conforme a la Ley 11.723 de Propiedad Intelectual, República Argentina (2025).
-
-
-
-Open-source application for converting MALDI-TOF peak lists obtained from commercial mass spectrometry systems (such as Vitek MS / Saramis RUO), from .txt files into XML format compatible with the public MicrobeNet database (CDC).
-
-Engineered with a primary focus on efficiency and usability, the application supports drag-and-drop file processing and operates entirely within a local environment, thereby ensuring independence from external services and preserving data integrity.
-
-Registered with the Dirección Nacional de Derechos de Autor (DNDA), in accordance with Intellectual Property Law No. 11,723, Argentina (2025).
-
-
+        Convierte listas de picos MALDI-TOF (tipo Vitek MS / Saramis RUO) a XML compatible con MicrobeNet de forma simple, rápida y local.
             </p>
-
-            <div class="hash">
-                sha256:f2229277f031ef7cbe0799a50df35faec0cadf5c7903d601994b7c3f125913a9
-            </div>
-
-        </div>
-
-        <div class="card">
-
-            <h2>Acceso a descarga</h2>
-
-            <p>
-Para acceder al instalador es necesario completar un breve formulario de registro con fines estadísticos.
-
-To access the installer, completion of a brief registration form for statistical purposes is required.
-
-            </p>
-            <a class="btn" href="https://forms.gle/nNRa9xnjXimxUWfj8" target="_blank">
-Completar registro
-            </a>
-        </div>
-
-        <div class="card">
-
-            <h2>Manual de usuario / User manual</h2>
-
-            <p>
-Consulte el manual completo para instrucciones de instalación y uso del software.
-
-Refer to the full user manual for installation and usage instructions.
-            </p>
-
-            <div class="button-group">
-                <a class="btn"
-                   href="https://dariogodoy2003.github.io/Convertidor-TXT-XML/manual/Manual_de_uso_Convertidor-TXT-XML.pdf"
-                   target="_blank">
-                   Abrir manual PDF / Open PDF manual
+            <div class="hero-buttons">
+                <a class="btn" href="https://forms.gle/nNRa9xnjXimxUWfj8" target="_blank">
+                Acceder a descarga
+                </a>
+                <a class="btn secondary" href="https://github.com/dariogodoy2003/Convertidor-TXT-XML" target="_blank">
+                Ver en GitHub
                 </a>
             </div>
-
         </div>
-
+    
+    <div class="content">
+    
+    <div class="card">
+    <h2>Características principales</h2>
+        <div class="features">
+        
+            <div class="feature">
+            <strong>Conversión directa</strong>
+            TXT → XML compatible con MicrobeNet
+            </div>
+        
+            <div class="feature">
+            <strong>Drag & Drop</strong>
+            Procesamiento simple e intuitivo
+            </div>
+        
+            <div class="feature">
+            <strong>Ejecución local</strong>
+            Sin servidores ni dependencias externas
+            </div>
+        
+            <div class="feature">
+            <strong>Ligero</strong>
+            Rápido y eficiente
+            </div>
+        
+            <div class="feature">
+            <strong>Offline</strong>
+            No requiere conexión a internet
+            </div>
+        
+            <div class="feature">
+            <strong>Open Source</strong>
+            Distribución libre y gratuita
+            </div>
+        </div>
     </div>
-
+    
+    <div class="card screenshot">
+        <h2>Vista del sistema</h2>
+        <img src="./screenshots/main.png">
+    </div>
+    
+    <div class="card">
+        <h2>Descripción / Description</h2>
+    
+        <div class="lang-block">
+        Aplicación de código abierto para la conversión de listas de picos MALDI-TOF provenientes de sistemas comerciales de espectrometría de masas (como Vitek MS / Saramis RUO), a partir de archivos .txt, hacia formato XML compatible con la base de datos pública MicrobeNet (CDC). 
+        
+        Diseñada bajo criterios de eficiencia y facilidad de uso, la herramienta permite el procesamiento de archivos mediante drag and drop y se ejecuta íntegramente en entorno local, garantizando independencia de servicios externos y resguardo de la información. 
+            
+        Registrado ante la Dirección Nacional de Derechos de Autor (DNDA), conforme a la Ley 11.723 de Propiedad Intelectual, República Argentina (2025).
+        </div>
+    
+        <div class="lang-block">
+        Open-source application for converting MALDI-TOF peak lists obtained from commercial mass spectrometry systems (such as Vitek MS / Saramis RUO), from .txt files into XML format compatible with the public MicrobeNet database (CDC).
+        
+        Engineered with a primary focus on efficiency and usability, the application supports drag-and-drop file processing and operates entirely within a local environment, thereby ensuring independence from external services and preserving data integrity.
+        
+        Registered with the Dirección Nacional de Derechos de Autor (DNDA), in accordance with Intellectual Property Law No. 11,723, Argentina (2025).
+        
+        </div>
+    
+        <div class="hash">
+        SHA256: f2229277f031ef7cbe0799a50df35faec0cadf5c7903d601994b7c3f125913a9
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Acceso a descarga</h2>
+        
+            <div class="lang-block">
+            Para acceder al instalador es necesario completar un breve formulario de registro con fines estadísticos.
+            </div>
+        
+            <div class="lang-block">
+            To access the installer, completion of a brief registration form for statistical purposes is required.
+            </div>
+        
+            <div class="btn-group">
+                <a class="btn" href="https://forms.gle/nNRa9xnjXimxUWfj8" target="_blank">
+            Completar registro
+            </a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Manual de usuario / User manual</h2>
+        
+            <div class="lang-block">
+            Consulte el manual completo para instrucciones de instalación y uso del software.
+            </div>
+        
+            <div class="lang-block">
+            Refer to the full user manual for installation and usage instructions.
+            </div>
+        
+            <div class="btn-group">
+                <a class="btn"
+                href="https://dariogodoy2003.github.io/Convertidor-TXT-XML/manual/Manual_de_uso_Convertidor-TXT-XML.pdf"
+                target="_blank">
+                Abrir manual PDF
+                </a>
+            </div>
+    </div>
+    
+    </div>
+    
     <div class="footer">
-        Convertidor TXT-XML • Open Source • 2025
+    Convertidor TXT-XML • Open Source • 2025
     </div>
-
 </div>
+
 <script data-goatcounter="https://converter-txt-xml.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
