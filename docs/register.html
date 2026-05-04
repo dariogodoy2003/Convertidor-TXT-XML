@@ -25,11 +25,21 @@
             --text: #1f2937;
             --border: #dbe4f0;
         }
+        body.dark {
+            --bg: #0f172a;
+            --card: #111827;
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --text: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --border: #1f2937;
+        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: background 0.25s, color 0.25s, border-color 0.25s;
         }
 
         body {
@@ -49,6 +59,24 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: var(--card); /* Importante para el modo oscuro */
+            color: var(--text);
+        }
+
+        .note {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--text-secondary); /* Usamos variable para legibilidad */
+            line-height: 1.6;
+            text-align: center;
         }
 
         h1 {
@@ -144,6 +172,13 @@
 <body>
     <div class="container">
         <div class="card">
+            <div class="container">
+                <div style="text-align: right; margin-bottom: 10px;">
+                    <button id="themeToggle" onclick="toggleTheme()" class="btn" style="width: auto; padding: 8px 15px; font-size: 0.8rem; border-radius: 8px;">
+                        🌙 Modo oscuro
+                    </button>
+                </div>
+            <div class="card">
             <h1>Formulario de Registro</h1>
             <p class="subtitle">
                 Este software es libre, gratuito y sin fines comerciales.<br><br>
@@ -209,6 +244,29 @@
 
 
     <script>
+        function toggleTheme() {
+            const isDark = document.body.classList.toggle("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            updateThemeButton(isDark);
+        }
+
+        function updateThemeButton(isDark) {
+            const btn = document.getElementById("themeToggle");
+            if (btn) btn.innerHTML = isDark ? "☀️ Modo claro" : "🌙 Modo oscuro";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme");
+            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const isDark = savedTheme === "dark" || (!savedTheme && systemPrefersDark);
+
+            if (isDark) {
+                document.body.classList.add("dark");
+            }
+            updateThemeButton(isDark);
+            
+            loadCountries();
+        });
         const SUPABASE_URL = "https://utxrmuhvuwsapzwvhnni.supabase.co";
         const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0eHJtdWh2dXdzYXB6d3Zobm5pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4MjU5MzUsImV4cCI6MjA5MzQwMTkzNX0.i6KEPPgjkGQQLGArVfMgycn9BwDFTQlTlgW-SraX9wA";
 
