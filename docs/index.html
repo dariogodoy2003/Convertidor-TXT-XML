@@ -3,42 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Convertidor TXT-XML</title>
-
-<meta name="description" content="Conversor TXT a XML para MALDI-TOF MS compatible con MicrobeNet. Software libre, local y gratuito.">
+<meta name="description" content="Convertidor TXT a XML para MALDI-TOF MS compatible con MicrobeNet. Software libre, local y gratuito.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+    script-src 'self' https://gc.zgo.at https://cdn.jsdelivr.net 'unsafe-inline'; 
+    connect-src 'self' https://utxrmuhvuwsapzwvhnni.supabase.co https://converter-txt-xml.goatcounter.com; 
+    style-src 'self' 'unsafe-inline'; 
+    img-src 'self' data: https://gc.zgo.at; 
+    font-src 'self';">
 
 <style>
 
 :root{
     --bg-main:#f6f8fc;
     --bg-card:#ffffff;
-
     --primary:#2563eb;
     --primary-dark:#1e40af;
     --accent:#0ea5e9;
-
     --text-main:#1f2937;
     --text-secondary:#4b5563;
-
     --border:#e5e7eb;
     --shadow:0 10px 30px rgba(0,0,0,0.08);
-
     --success:#16a34a;
 }
 
-:root{
-    --bg-main:#f6f8fc;
-    --bg-card:#ffffff;
-    --primary:#2563eb;
-    --primary-dark:#1e40af;
-    --accent:#0ea5e9;
-    --text-main:#1f2937;
-    --text-secondary:#4b5563;
-    --border:#e5e7eb;
-    --shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
 body.dark{
     --bg-main:#0f172a;
     --bg-card:#111827;
@@ -50,22 +38,6 @@ body.dark{
     --border:#1f2937;
     --shadow:0 10px 30px rgba(0,0,0,0.5);
 }
-
-body.dark{
-    --bg-main:#0f172a;
-    --bg-card:#111827;
-
-    --primary:#3b82f6;
-    --primary-dark:#2563eb;
-    --accent:#38bdf8;
-
-    --text-main:#e5e7eb;
-    --text-secondary:#9ca3af;
-
-    --border:#1f2937;
-    --shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
 
 *{
     margin:0;
@@ -99,16 +71,8 @@ body{
     padding:70px 40px;
 }
 
-.hero h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-.hero p{
-    max-width:750px;
-    margin:auto;
-    font-size:1.15rem;
-}
+.hero h1{ font-size:3rem; margin-bottom:15px; }
+.hero p{ max-width:750px; margin:auto; font-size:1.15rem; }
 
 .hero-buttons{
     margin-top:25px;
@@ -128,7 +92,6 @@ body{
     border:none;
     cursor:pointer;
     transition:all 0.25s ease;
-    cursor:pointer;
 }
 
 .btn:hover{
@@ -149,9 +112,7 @@ body{
     box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-.content{
-    padding:40px;
-}
+.content{ padding:40px; }
 
 .card{
     background:var(--bg-card);
@@ -159,13 +120,10 @@ body{
     border-radius:18px;
     padding:30px;
     margin-bottom:30px;
-    margin-upper:30px;
+    margin-top:30px; 
 }
 
-h2{
-    margin-bottom:18px;
-    color:var(--primary);
-}
+h2{ margin-bottom:18px; color:var(--primary); }
 
 .features{
     display:grid;
@@ -186,10 +144,7 @@ h2{
     transform:translateY(20px);
 }
 
-.feature.visible{
-    opacity:1;
-    transform:translateY(0);
-}
+.feature.visible{ opacity:1; transform:translateY(0); }
 
 .feature:hover{
     transform:translateY(-6px) scale(1.02);
@@ -209,39 +164,18 @@ h2{
     font-size:22px;
 }
 
-.feature strong{
-    display:block;
-    margin-bottom:6px;
-    color:var(--primary);
-}
+.feature strong{ display:block; margin-bottom:6px; color:var(--primary); }
 
-.lang-block{
-    margin-bottom:25px;
-}
-
-.lang-block p{
-    margin-bottom:12px;
-    text-align:justify;
-}
+.lang-block{ margin-bottom:25px; }
+.lang-block p{ margin-bottom:12px; text-align:justify; }
     
-.check-list{
-    list-style:none;
-    padding-left:0;
-}
-
-.check-list li{
-    position:relative;
-    padding-left:0px;
-    margin-bottom:10px;
-    text-align:center;
-}
+.check-list{ list-style:none; padding-left:0; }
+.check-list li{ position:relative; margin-bottom:10px; text-align:center; }
 
 .check-list li::before{
     content:"✔";
-    position:center;
-    left:0;
     color:var(--success);
-    text-align: center;
+    margin-right: 8px;
 }
 
 .screenshot img{
@@ -253,10 +187,7 @@ h2{
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-.footer{
-    padding:20px;
-    color:var(--text-secondary);
-}
+.footer{ padding:20px; color:var(--text-secondary); }
 
 @media(max-width:768px){
     .hero h1{font-size:2rem;}
@@ -265,26 +196,23 @@ h2{
     .card{padding:20px;}
 }
 
-*{
-    transition: background 0.25s, color 0.25s, border-color 0.25s;
+body, .card, .container, .feature, .btn {
+    transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
-
 </style>
 </head>
 
 <body>
-
     <div class="container">
-
         <div class="hero">
             <h1>Convertidor TXT-XML</h1>
             <p>Convierte listas de picos MALDI-TOF MS en XML compatible con MicrobeNet en segundos</p>
             <p>Sin instalación compleja. Sin conexión. Control total de sus datos.</p>
             <p style="margin-top:10px; opacity:0.9;">Acceso inmediato tras registro (menos de 10 segundos).</p>
             <div class="hero-buttons">
-                <a class="btn" href="./register.html" target="_blank">Descargar instalador</a>
-                <a class="btn secondary" href="https://github.com/dariogodoy2003/Convertidor-TXT-XML" target="_blank">GitHub</a>
-                <button class="btn secondary" onclick="toggleTheme()" id="themeToggle">🌙 Modo oscuro</button>
+                <a class="btn" href="./register.html" target="_blank" rel="noopener noreferrer">Descargar instalador</a>
+                <a class="btn secondary" href="https://github.com/dariogodoy2003/Convertidor-TXT-XML" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <button class="btn secondary" onclick="toggleTheme()" id="themeToggle" type="button" aria-label="Cambiar tema de color">🌙 Modo oscuro</button>
             </div>
         </div>
 
@@ -299,121 +227,81 @@ h2{
         </div>
 
         <div class="content">
-
-        <div class="card">
-            <h2>¿Cómo funciona?</h2>
-
-            <div class="features">
-
-                <div class="feature">
-                    <div class="feature-icon">📄
-                    </div>
-                    <strong>1. Cargar archivo</strong>
-                    <p>Seleccione o arrastre el archivo .txt</p>
-                </div>
-
-                <div class="feature">
-                    <div class="feature-icon">⚙️
-                    </div>
-                    <strong>2. Procesar</strong>
-                    <p>Conversión automática e inmediata</p>
-                </div>
-
-                <div class="feature">
-                    <div class="feature-icon">📦
-                    </div>
-                    <strong>3. Exportar XML</strong>
-                    <p>Obtenga el XML listo para MicrobeNet</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="content">
-            
             <div class="card">
-            <h2>Características principales</h2>
+                <h2>¿Cómo funciona?</h2>
                 <div class="features">
-                
                     <div class="feature">
-                    <strong>Conversión directa</strong>
-                    TXT → XML MicrobeNet
+                        <div class="feature-icon">📄</div>
+                        <strong>1. Cargar archivo</strong>
+                        <p>Seleccione o arrastre el archivo .txt</p>
                     </div>
-                
                     <div class="feature">
-                    <strong>Drag & Drop</strong>
-                    Uso inmediato
+                        <div class="feature-icon">⚙️</div>
+                        <strong>2. Procesar</strong>
+                        <p>Conversión automática e inmediata</p>
                     </div>
-                
                     <div class="feature">
-                    <strong>Ejecución local</strong>
-                    Sin servidores
+                        <div class="feature-icon">📦</div>
+                        <strong>3. Exportar XML</strong>
+                        <p>Obtenga el XML listo para MicrobeNet</p>
                     </div>
-                
-                    <div class="feature">
-                    <strong>Ligero</strong>
-                    Rápido y eficiente
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                <h2>Características principales</h2>
+                    <div class="features">
+                        <div class="feature"><strong>Conversión directa</strong><br>TXT → XML MicrobeNet</div>
+                        <div class="feature"><strong>Drag & Drop</strong><br>Uso inmediato</div>
+                        <div class="feature"><strong>Ejecución local</strong><br>Sin servidores</div>
+                        <div class="feature"><strong>Ligero</strong><br>Rápido y eficiente</div>
+                        <div class="feature"><strong>Offline</strong><br>No requiere conexión a internet</div>
+                        <div class="feature"><strong>Open Source</strong><br>Distribución libre y gratuita</div>
                     </div>
-                
-                    <div class="feature">
-                    <strong>Offline</strong>
-                    No requiere conexión a internet
+                </div>
+
+                <div class="card">
+                    <h2>Descripción / Description</h2>
+                    <div class="lang-block">
+                        <p>Aplicación de código abierto para la conversión de listas de picos MALDI-TOF MS provenientes de sistemas comerciales de espectrometría de masas (como Vitek MS / Saramis RUO), a partir de archivos .txt, hacia formato XML compatible con la base de datos pública MicrobeNet (CDC).</p>
+                        <p>Diseñada bajo criterios de eficiencia y facilidad de uso, la herramienta permite el procesamiento de archivos mediante drag and drop y se ejecuta íntegramente en entorno local, garantizando independencia de servicios externos y resguardo de la información.</p>
+                        <p>Registrado ante la Dirección Nacional de Derechos de Autor (DNDA), conforme a la Ley 11.723 de Propiedad Intelectual, República Argentina (2025).</p>
                     </div>
-                
-                    <div class="feature">
-                    <strong>Open Source</strong>
-                    Distribución libre y gratuita
-                    </div>
+                </div>
+
+                <div class="card screenshot">
+                    <h2>Interfaz del sistema</h2>
+                    <p>Procesamiento simple: "arrastrar y soltar" archivos.</p>
+                    <img src="./screenshots/main.png" alt="Interfaz del software Convertidor TXT-XML">
                 </div>
             </div>
 
             <div class="card">
-
-                <h2>Descripción / Description</h2>
-
-                <div class="lang-block">
-                    <p>Aplicación de código abierto para la conversión de listas de picos MALDI-TOF MS provenientes de sistemas comerciales de espectrometría de masas (como Vitek MS / Saramis RUO), a partir de archivos .txt, hacia formato XML compatible con la base de datos pública MicrobeNet (CDC).</p>
-                    <p>Diseñada bajo criterios de eficiencia y facilidad de uso, la herramienta permite el procesamiento de archivos mediante drag and drop y se ejecuta íntegramente en entorno local, garantizando independencia de servicios externos y resguardo de la información.</p>
-                    <p>Registrado ante la Dirección Nacional de Derechos de Autor (DNDA), conforme a la Ley 11.723 de Propiedad Intelectual, República Argentina (2025).</p>
-                </div>
-
-            </div>
-
-
-            <div class="card screenshot">
-                <h2>Interfaz del sistema</h2>
-                <p>Procesamiento simple: "arrastrar y soltar" archivos.</p>
-                <img src="./screenshots/main.png">
-            </div>
-        </div>
-
-        <div class="card">
                 <h2>Descargar (requiere registro)</h2>
-                
-                    <div class="lang-block">
-                    Para acceder al instalador es necesario completar un breve formulario de registro con fines estadísticos.
-                    </div>
-            
-                    <div class="btn-group">
-                        <a class="btn" href="./register.html" target="_blank">Completar registro</a>
-                    </div>
-        </div>
-        
-        <div class="card">
-            <h2>Manual de usuario / User manual</h2>
-            <div class="lang-block">
-            Consulte el manual completo para instrucciones de instalación y uso del software.
+                <div class="lang-block">
+                Para acceder al instalador es necesario completar un breve formulario de registro con fines estadísticos.
+                </div>
+            <div class="lang-block" style="font-size: 0.8rem; font-family: monospace; word-break: break-all; opacity: 0.7;">
+                Verificación SHA-256 (Setup v1.0.0): <br>
+                f2229277f031ef7cbe0799a50df35faec0cadf5c7903d601994b7c3f125913a9
+            </div>
+                <div class="btn-group">
+                    <a class="btn" href="./register.html" target="_blank" rel="noopener noreferrer">Completar registro</a>
+                </div>
             </div>
             
-            <div class="btn-group">
-                <a class="btn"
-                href="https://dariogodoy2003.github.io/Convertidor-TXT-XML/manual/Manual_de_uso_Convertidor-TXT-XML.pdf"
-                target="_blank">
-                Abrir manual PDF
-                </a>
+            <div class="card">
+                <h2>Manual de usuario / User manual</h2>
+                <div class="lang-block">
+                Consulte el manual completo para instrucciones de instalación y uso del software.
+                </div>
+                <div class="btn-group">
+                    <a class="btn" href="https://dariogodoy2003.github.io/Convertidor-TXT-XML/manual/Manual_de_uso_Convertidor-TXT-XML.pdf" target="_blank" rel="noopener noreferrer">Abrir manual PDF</a>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
+            <div class="card">
                 <h2>Usuarios finales</h2>
                 <ul class="check-list">
                     <li>Laboratorios clínicos</li>
@@ -422,91 +310,50 @@ h2{
                     <li>Entornos académicos</li>
                     <li>Industria</li>
                 </ul>
-        </div>
+            </div>
 
-        <div class="footer">
-    Convertidor TXT-XML • Open Source • 2025
+            <div class="footer">
+                Convertidor TXT-XML • Open Source • 2025
+            </div>
+        </div>
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const features = document.querySelectorAll(".feature");
-    const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-    if(entry.isIntersecting){
-    entry.target.classList.add("visible");
-    }
-    });
-    },{threshold:0.2});
-    features.forEach(f => observer.observe(f));
-    });
-
-
-    function toggleTheme(){
-    const body=document.body;
-    const btn=document.getElementById("themeToggle");
-
-    body.classList.toggle("dark");
-
-    if(body.classList.contains("dark")){
-    localStorage.setItem("theme","dark");
-    btn.innerHTML="☀️ Modo claro";
-    }else{
-    localStorage.setItem("theme","light");
-    btn.innerHTML="🌙 Modo oscuro";
-    }
-    }
-
-    window.addEventListener("DOMContentLoaded",()=>{
-    const saved=localStorage.getItem("theme");
-    const btn=document.getElementById("themeToggle");
-
-    if(saved==="dark"){
-    document.body.classList.add("dark");
-    btn.innerHTML="☀️ Modo claro";
-    }
-    });
-    </script>
-
-    <script id="fix2">
-    window.addEventListener("DOMContentLoaded", () => {
-
-        const savedTheme = localStorage.getItem("theme");
-        const btn = document.getElementById("themeToggle");
-
-        if(savedTheme){
-            if(savedTheme === "dark"){
-                document.body.classList.add("dark");
-                btn.innerHTML = "☀️ Modo claro";
-            }
-        }else{
-            if(window.matchMedia("(prefers-color-scheme: dark)").matches){
-                document.body.classList.add("dark");
-                btn.innerHTML = "☀️ Modo claro";
-            }
-        }
-
-    });
-    </script>
-
-    <script id="fix3">
     function toggleTheme(){
         const body = document.body;
         const btn = document.getElementById("themeToggle");
-
-        body.classList.toggle("dark");
-
-        const isDark = body.classList.contains("dark");
-
+        const isDark = body.classList.toggle("dark");
         localStorage.setItem("theme", isDark ? "dark" : "light");
-
         btn.innerHTML = isDark ? "☀️ Modo claro" : "🌙 Modo oscuro";
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Animación de features
+        const features = document.querySelectorAll(".feature");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("visible");
+                }
+            });
+        },{threshold:0.2});
+        features.forEach(f => observer.observe(f));
+
+        const savedTheme = localStorage.getItem("theme");
+        const btn = document.getElementById("themeToggle");
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if(savedTheme === "dark" || (!savedTheme && systemPrefersDark)){
+            document.body.classList.add("dark");
+            btn.innerHTML = "☀️ Modo claro";
+        }
+    });
     </script>
 
     <script data-goatcounter="https://converter-txt-xml.goatcounter.com/count"
-    async src="//gc.zgo.at/count.js">
+            async src="//gc.zgo.at/count.js"
+            integrity="sha384-Z66Bbgeb9W6IDo9R7SgpV7jE07oT058Vf/KzP624B6PZkX7zWf0z6A+x97Hn1K4E"
+            crossorigin="anonymous">
     </script>
-
 </body>
 </html>
