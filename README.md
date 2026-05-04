@@ -1,5 +1,5 @@
 # Convertidor TXT-XML para MALDI-TOF MS
-> Herramienta profesional para la integración de datos espectrométricos con la plataforma MicrobeNet (CDC).
+> Software libre para conversión de listas de picos MALDI-TOF MS del tipo generado por Vitek MS / Saramis RUO a XML compatible con la base de datos pública MicrobeNet.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Platform: Windows](https://img.shields.io/badge/Platform-Windows_x64-blue.svg)
@@ -9,10 +9,10 @@
 ---
 
 ## 🔬 Descripción General
-**Convertidor TXT-XML** es una solución técnica diseñada para optimizar el flujo de trabajo en laboratorios de microbiología. Permite la transformación automatizada de listas de picos generadas por sistemas comerciales (**Vitek MS / Saramis RUO**) al esquema XML requerido por la base de datos pública **MicrobeNet (CDC)**.
+**Convertidor TXT-XML** es una solución técnica diseñada para optimizar el flujo de trabajo en laboratorios de microbiología. Permite la transformación automatizada de listas de picos generadas por sistemas comerciales de espectrometría de masas (como **Vitek MS / Saramis RUO**) al esquema XML requerido por la base de datos pública **MicrobeNet (CDC)**.
 
 ### ¿Por qué utilizar esta herramienta?
-*   **Eficiencia:** Elimina la transcripción manual, reduciendo el error humano.
+*   **Eficiencia:** Ejecución automatizada de la transformación.
 *   **Privacidad (Air-gapped):** Ejecución 100% local. No se requiere conexión a internet, garantizando que los datos sensibles no abandonen la red institucional.
 *   **Simplicidad:** Interfaz basada en *Drag & Drop* diseñada para personal técnico y científico.
 
@@ -38,9 +38,9 @@
 
 ## 📥 Descarga e Instalación
 
-1. **Registro:** Acceda a la [Página Oficial del Proyecto](https://dariogodoy2003.github.io/Convertidor-TXT-XML/) para completar el registro estadístico (obligatorio para fines académicos).
+1. **Registro:** Acceda a la [Página Oficial del Proyecto](https://dariogodoy2003.github.io/Convertidor-TXT-XML/) para completar el registro estadístico (obligatorio, con fines académicos).
 2. **Descarga:** Tras el registro, obtendrá el instalador oficial.
-3. **Ejecución:** Inicie el archivo `Setup` y siga el asistente. No se requieren privilegios de administrador para la ejecución (dependiendo de la política de IT).
+3. **Ejecución:** Inicie el archivo `Convertidor TXT-XML Setup 1.0.0` y siga el asistente. No se requieren privilegios de administrador para la ejecución (dependiendo de la política de IT).
 
 > [!NOTE]
 > Consulte el [Manual de Usuario en PDF](https://dariogodoy2003.github.io/Convertidor-TXT-XML/manual/Manual_de_uso_Convertidor-TXT-XML.pdf) para instrucciones detalladas sobre la configuración de los archivos de entrada.
@@ -56,7 +56,7 @@ Para garantizar que el software no ha sido alterado, verifique la suma de compro
 ---
 
 ## 📜 Registro Legal y Licencia
-Este software es **Propiedad Intelectual registrada** ante la Dirección Nacional de Derechos de Autor (DNDA), República Argentina, conforme a la **Ley 11.723**.
+Este software se encuentra registrado ante la Dirección Nacional de Derechos de Autor (DNDA), República Argentina, conforme a la **Ley 11.723** de Propiedad Intelectual.
 
 *   **Licencia:** Distribuido bajo la [Licencia MIT](LICENSE).
 *   **Uso:** Libre para fines académicos, científicos y técnicos sin fines comerciales.
