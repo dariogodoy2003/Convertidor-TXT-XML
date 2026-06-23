@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
         script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; 
-        connect-src 'self' https://utxrmuhvuwsapzwvhnni.supabase.co https://restcountries.com; 
+        connect-src 'self' https://utxrmuhvuwsapzwvhnni.supabase.co https://api.restcountries.com; 
         style-src 'self' 'unsafe-inline'; 
         img-src 'self' data:; 
         font-src 'self';">
@@ -275,13 +275,14 @@
 
         async function loadCountries() {
             try {
-                const response = await fetch("https://restcountries.com/v5/all?fields=name",
+                const response = await fetch("https://api.restcountries.com/countries/v5",
                                             { headers: { 'Authorization': 'Bearer rc_live_3fe47ef73ae9445a81bbf178d5deeea7' } });
                 if (!response.ok) throw new Error("Error HTTP " + response.status);
 
                 const countries = await response.json();
 
                 countrySelect.innerHTML = '<option value="">Seleccionar país</option>';
+				
 
                 countries.sort((a, b) => {
                     const nameA = a.translations?.spa?.common || a.name.common;
@@ -296,8 +297,22 @@
                     option.textContent = countryName;
                     countrySelect.appendChild(option);
                 });
+				
+				const response = await fetch(
+				"https://api.restcountries.com/countries/v5",
+				{
+					headers: {
+						Authorization: "Bearer rc_live_3fe47ef73ae9445a81bbf178d5deeea7"
+					}
+				}
+				);
+
+				console.log(response.status);
+				console.log(await response.text());
+				
             } catch (error) {
                 console.error("Error cargando países:", error);
+				alert(error.message);
                 countrySelect.innerHTML = '<option value="">Error al cargar países. Reintente.</option>';
             }
         }   
