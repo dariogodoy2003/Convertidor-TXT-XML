@@ -217,13 +217,13 @@
 
                 <div class="form-group">
                     <label for="country">País *</label>
-					<input type="text" id="stateDepartment" required placeholder="Ingrese país">
+					<input type="text" id="country" required placeholder="Ingrese país">
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="stateDepartment">Provincia/Estado/Departamento *</label>
-                    <input type="text" id="country" required placeholder="Ingrese provincia/estado/departamento">
+                    <input type="text" id="stateDepartment" required placeholder="Ingrese provincia/estado/departamento">
                 </div>
 
                 <button type="submit" class="btn" id="submitBtn">
@@ -264,60 +264,12 @@
             }
             updateThemeButton(isDark);
             
-            /*loadCountries();*/
         });
         const SUPABASE_URL = "https://utxrmuhvuwsapzwvhnni.supabase.co";
         const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0eHJtdWh2dXdzYXB6d3Zobm5pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4MjU5MzUsImV4cCI6MjA5MzQwMTkzNX0.i6KEPPgjkGQQLGArVfMgycn9BwDFTQlTlgW-SraX9wA";
 
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         const countrySelect = document.getElementById("country");
-/*
-        async function loadCountries() {
-            try {
-                const response = await fetch("https://api.restcountries.com/countries/v5",
-                                            { headers: { 'Authorization': 'Bearer rc_live_3fe47ef73ae9445a81bbf178d5deeea7' } });
-                if (!response.ok) throw new Error("Error HTTP " + response.status);
-
-                const countries = await response.json();
-
-                countrySelect.innerHTML = '<option value="">Seleccionar país</option>';
-				
-
-                countries.sort((a, b) => {
-                    const nameA = a.translations?.spa?.common || a.name.common;
-                    const nameB = b.translations?.spa?.common || b.name.common;
-                    return nameA.localeCompare(nameB);
-                });
-
-                countries.forEach(country => {
-                    const countryName = country.translations?.spa?.common || country.name.common;
-                    const option = document.createElement("option");
-                    option.value = countryName;
-                    option.textContent = countryName;
-                    countrySelect.appendChild(option);
-                });
-				
-				const response = await fetch(
-				"https://api.restcountries.com/countries/v5",
-				{
-					headers: {
-						Authorization: "Bearer rc_live_3fe47ef73ae9445a81bbf178d5deeea7"
-					}
-				}
-				);
-
-				console.log(response.status);
-				console.log(await response.text());
-				
-            } catch (error) {
-                console.error("Error cargando países:", error);
-				alert(error.message);
-                countrySelect.innerHTML = '<option value="">Error al cargar países. Reintente.</option>';
-            }
-        }   
-
-        loadCountries();
-		*/
 
         document.getElementById("registrationForm").addEventListener("submit", async (e) => {
         e.preventDefault();
