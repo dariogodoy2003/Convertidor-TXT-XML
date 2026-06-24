@@ -65,4 +65,6 @@ Este software se encuentra registrado ante la Dirección Nacional de Derechos de
 
 ## 👨‍💻 Autor y Contacto
 Desarrollado por **Dario A. Godoy**.  
-¿Encontró un error o necesita una mejora? [Abra un Issue en este repositorio](https://github.com/dariogodoy2003/Convertidor-TXT-XML/issues).
+
+- 🐞 Reporte errores o solicite mejoras mediante [GitHub Issues](https://github.com/dariogodoy2003/Convertidor-TXT-XML/issues)
+- 📧 Correo electrónico: [dario_godoy2003@yahoo.com.ar](mailto:dario_godoy2003@yahoo.com.ar)
