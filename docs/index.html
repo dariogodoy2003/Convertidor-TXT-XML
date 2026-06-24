@@ -262,7 +262,7 @@ body, .card, .container, .feature, .btn {
                 </div>
 
                 <div class="card">
-                    <h2>Descripción / Description</h2>
+                    <h2>Descripción</h2>
                     <div class="lang-block">
                         <p>Aplicación de código abierto para la conversión de listas de picos MALDI-TOF MS provenientes de sistemas comerciales de espectrometría de masas (como Vitek MS / Saramis RUO), a partir de archivos .txt, hacia formato XML compatible con la base de datos pública MicrobeNet (CDC).</p>
                         <p>Diseñada bajo criterios de eficiencia y facilidad de uso, la herramienta permite el procesamiento de archivos mediante drag and drop y se ejecuta íntegramente en entorno local, garantizando independencia de servicios externos y resguardo de la información.</p>
@@ -292,7 +292,7 @@ body, .card, .container, .feature, .btn {
             </div>
             
             <div class="card">
-                <h2>Manual de usuario / User manual</h2>
+                <h2>Manual de usuario</h2>
                 <div class="lang-block">
                 Consulte el manual completo para instrucciones de instalación y uso del software.
                 </div>
@@ -311,9 +311,33 @@ body, .card, .container, .feature, .btn {
                     <li>Industria</li>
                 </ul>
             </div>
+            
+            <div class="card">
+                <h2>Soporte técnico</h2>
+                <div class="lang-block" style="text-align:center;">
+                    <p>
+                        Ante requerimientos de asistencia, problemas con el software 
+                        o enlaces de descarga no disponibles,
+                        puede contactarse por correo electrónico:
+                    </p>
+
+                    <a class="btn" 
+                        href="mailto:dario_godoy2003@yahoo.com.ar?subject=Soporte%20Convertidor%20TXT-XML">
+                        📧 Contactar soporte 
+                    </a>
+
+                    <p style="margin-top:15px; font-size:0.95rem;">
+                        Correo electrónico:
+                        <a href="mailto:dario_godoy2003@yahoo.com.ar"
+                            style="color:var(--primary); font-weight:600;">
+                            dario_godoy2003@yahoo.com.ar
+                        </a>
+                    </p>
+                </div>
+            </div>
 
             <div class="footer">
-                Convertidor TXT-XML • Open Source • 2025
+                Convertidor TXT-XML • Open Source • 2025 • dario_godoy2003@yahoo.com.ar
             </div>
         </div>
     </div>
@@ -328,7 +352,7 @@ body, .card, .container, .feature, .btn {
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Animación de features
+        // Animaciones
         const features = document.querySelectorAll(".feature");
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
